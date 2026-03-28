@@ -1,0 +1,89 @@
+is_global = true
+build_property.EnableAotAnalyzer = 
+build_property.EnableSingleFileAnalyzer = 
+build_property.EnableTrimAnalyzer = false
+build_property.IncludeAllContentForSelfExtract = 
+build_property.VerifyReferenceTrimCompatibility = 
+build_property.VerifyReferenceAotCompatibility = 
+build_property.TargetFramework = net10.0
+build_property.TargetFrameworkIdentifier = .NETCoreApp
+build_property.TargetFrameworkVersion = v10.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = false
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = browser
+build_property.RootNamespace = Pulse_Blazor
+build_property.RootNamespace = Pulse_Blazor
+build_property.ProjectDir = /Users/minhdinh/Desktop/PulseProject/Pulse Blazor/
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = false
+build_property.RazorLangVersion = 9.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = /Users/minhdinh/Desktop/PulseProject/Pulse Blazor
+build_property._RazorSourceGeneratorDebug = 
+build_property.EffectiveAnalysisLevelStyle = 10.0
+build_property.EnableCodeStyleSeverity = 
+
+[/Users/minhdinh/Desktop/PulseProject/Pulse Blazor/App.razor]
+build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/minhdinh/Desktop/PulseProject/Pulse Blazor/Components/Benefits.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9CZW5lZml0cy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/minhdinh/Desktop/PulseProject/Pulse Blazor/Components/ChatDemo.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9DaGF0RGVtby5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/minhdinh/Desktop/PulseProject/Pulse Blazor/Components/CTA.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9DVEEucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/minhdinh/Desktop/PulseProject/Pulse Blazor/Components/Features.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9GZWF0dXJlcy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/minhdinh/Desktop/PulseProject/Pulse Blazor/Components/Hero.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9IZXJvLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/minhdinh/Desktop/PulseProject/Pulse Blazor/Components/HowItWorks.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9Ib3dJdFdvcmtzLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/minhdinh/Desktop/PulseProject/Pulse Blazor/Components/Navigation.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9OYXZpZ2F0aW9uLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/minhdinh/Desktop/PulseProject/Pulse Blazor/Components/PulseFooter.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QdWxzZUZvb3Rlci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/minhdinh/Desktop/PulseProject/Pulse Blazor/Components/TrustBar.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9UcnVzdEJhci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/minhdinh/Desktop/PulseProject/Pulse Blazor/Components/UseCases.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9Vc2VDYXNlcy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/minhdinh/Desktop/PulseProject/Pulse Blazor/Layout/MainLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = TGF5b3V0L01haW5MYXlvdXQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/minhdinh/Desktop/PulseProject/Pulse Blazor/Pages/Home.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvSG9tZS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/minhdinh/Desktop/PulseProject/Pulse Blazor/Pages/NotFound.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvTm90Rm91bmQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/minhdinh/Desktop/PulseProject/Pulse Blazor/_Imports.razor]
+build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 

@@ -1,0 +1,38 @@
+<section class="how-it-works">
+    <div class="section-inner">
+        <div class="section-header">
+            <span class="section-eyebrow">How It Works</span>
+            <h2 class="section-title">Up and running in minutes</h2>
+            <p class="section-desc">
+                Getting started with Pulse AI is simple. Connect your existing tools,
+                train the AI on your data, and start resolving customer issues automatically.
+            </p>
+        </div>
+
+        <div class="steps-grid">
+            @for (int i = 0; i < _steps.Length; i++)
+            {
+                var step = _steps[i];
+                var num = (i + 1).ToString("D2");
+                <div class="step">
+                    <div class="step-number-bg">@num</div>
+                    <div class="step-circle">@num</div>
+                    <h3 class="step-title">@step.Title</h3>
+                    <p class="step-desc">@step.Description</p>
+                </div>
+            }
+        </div>
+    </div>
+</section>
+
+@code {
+    private record Step(string Title, string Description);
+
+    private readonly Step[] _steps =
+    {
+        new("Connect Your Data", "Integrate your knowledge base, CRM, and support history so Pulse AI learns from your existing content."),
+        new("Train & Configure", "Customize tone, escalation rules, and response templates to match your brand and support policies."),
+        new("Deploy Everywhere", "Launch across all your customer touchpoints — website, app, email, and social channels instantly."),
+        new("Improve Continuously", "Monitor performance metrics and let the AI learn from every interaction to get smarter over time."),
+    };
+}

@@ -1,0 +1,162 @@
+@using System.Timers
+@implements IDisposable
+
+<div class="chat-wrapper">
+    <div class="chat-response-badge">Response in &lt; 2 sec</div>
+    <div class="chat-box">
+        <div class="chat-header">
+            <div class="chat-avatar">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/>
+                    <path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/>
+                </svg>
+                <div class="online-dot"></div>
+            </div>
+            <div class="chat-header-info">
+                <strong>Pulse AI Assistant</strong>
+                <span>Online — Ready to help</span>
+            </div>
+        </div>
+
+        <div class="chat-messages">
+            @foreach (var msg in _messages)
+            {
+                if (msg.IsUser)
+                {
+                    <div class="msg user">
+                        <div class="msg-bubble">@msg.Text</div>
+                    </div>
+                }
+                else
+                {
+                    <div class="msg bot">
+                        <div class="msg-bot-avatar">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/>
+                            </svg>
+                        </div>
+                        <div class="msg-bubble">@msg.Text</div>
+                    </div>
+                }
+            }
+
+            @if (_showTyping)
+            {
+                <div class="msg bot">
+                    <div class="msg-bot-avatar">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/>
+                        </svg>
+                    </div>
+                    <div class="typing-indicator">
+                        <div class="typing-dot"></div>
+                        <div class="typing-dot"></div>
+                        <div class="typing-dot"></div>
+                    </div>
+                </div>
+            }
+        </div>
+
+        <div class="chat-input-row">
+            <input class="chat-input" type="text" placeholder="Type a message..." disabled />
+            <div class="chat-send-btn">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/>
+                </svg>
+            </div>
+        </div>
+    </div>
+</div>
+
+@code {
+    private record ChatMessage(string Text, bool IsUser);
+
+    private readonly List<(string Text, bool IsUser, int Delay)> _script = new()
+    {
+        ("Hi! I need help tracking my order #45291", true, 0),
+        ("Hi! I can see your order #45291 is currently in transit and expected to arrive tomorrow between 2–5 PM. Would you like a tracking link?", false, 1200),
+        ("Yes please, and can I change the delivery address?", true, 3500),
+        ("Of course! I've sent the tracking link to your email. To update the address, I'll need the new details — what's the new address?", false, 5000),
+    };
+
+    private List<ChatMessage> _messages = new();
+    private bool _showTyping;
+    private Timer? _timer;
+    private int _step;
+
+    protected override void OnInitialized()
+    {
+        RunStep();
+    }
+
+    private void RunStep()
+    {
+        if (_step >= _script.Count)
+        {
+            // Reset after delay
+            _timer = new Timer(3000);
+            _timer.Elapsed += (_, _) => InvokeAsync(() =>
+            {
+                _timer?.Dispose();
+                _timer = null;
+                _messages.Clear();
+                _showTyping = false;
+                _step = 0;
+                StateHasChanged();
+                RunStep();
+            });
+            _timer.AutoReset = false;
+            _timer.Start();
+            return;
+        }
+
+        var (text, isUser, delay) = _script[_step];
+
+        if (isUser)
+        {
+            _timer = new Timer(delay == 0 ? 600 : 2000);
+            _timer.Elapsed += (_, _) => InvokeAsync(() =>
+            {
+                _timer?.Dispose();
+                _messages.Add(new ChatMessage(text, true));
+                _step++;
+                StateHasChanged();
+                RunStep();
+            });
+            _timer.AutoReset = false;
+            _timer.Start();
+        }
+        else
+        {
+            // Show typing indicator first
+            _timer = new Timer(600);
+            _timer.Elapsed += (_, _) => InvokeAsync(() =>
+            {
+                _timer?.Dispose();
+                _showTyping = true;
+                StateHasChanged();
+
+                // Then show actual message after typing delay
+                _timer = new Timer(1400);
+                _timer.Elapsed += (_, _) => InvokeAsync(() =>
+                {
+                    _timer?.Dispose();
+                    _showTyping = false;
+                    _messages.Add(new ChatMessage(text, false));
+                    _step++;
+                    StateHasChanged();
+                    RunStep();
+                });
+                _timer.AutoReset = false;
+                _timer.Start();
+            });
+            _timer.AutoReset = false;
+            _timer.Start();
+        }
+    }
+
+    public void Dispose()
+    {
+        _timer?.Dispose();
+    }
+}
