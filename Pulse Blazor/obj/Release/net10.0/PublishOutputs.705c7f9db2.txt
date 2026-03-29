@@ -1,0 +1,4 @@
+/Users/minhdinh/Desktop/PulseProject/release/wwwroot/index.html
+/Users/minhdinh/Desktop/PulseProject/release/Pulse Blazor.runtimeconfig.json
+/Users/minhdinh/Desktop/PulseProject/release/dotnet.js
+/Users/minhdinh/Desktop/PulseProject/release/web.config
