@@ -1099,6 +1099,8 @@ p, .body-text {
     border-radius: var(--r);
     padding: 2.75rem;
     position: relative;
+    flex: 0 0 100%;
+    min-height: 250px;
 }
 
 .testimonial-quote {
@@ -1135,8 +1137,8 @@ p, .body-text {
 
 .testimonials-slider {
     display: flex;
-    gap: 1.5rem;
     transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    width: 100%;
 }
 
 .testimonials-controls {
