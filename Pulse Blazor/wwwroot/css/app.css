@@ -17,9 +17,9 @@
     --border-md:   rgba(0,0,0,0.12);
 
     /* --- Accent Colors --- */
-    --accent:      #34d399;   /* emerald-400 */
-    --accent-dk:   #059669;   /* emerald-600 */
-    --accent-glow: rgba(52,211,153,0.25);
+    --accent:      #162436;   /* brand navy */
+    --accent-dk:   #0f1820;   /* brand navy dark */
+    --accent-glow: rgba(22,36,54,0.15);
     --cyan:        #67e8f9;   /* cyan-300 */
 
     /* --- Buttons & Interactive --- */
@@ -945,9 +945,9 @@ p, .body-text {
 
 /* ========== 11. STATS STRIP (ImpactStats) ========== */
 .impact-section {
-    background: rgba(52,211,153,0.04);
-    border-top: 1px solid rgba(52,211,153,0.1);
-    border-bottom: 1px solid rgba(52,211,153,0.1);
+    background: rgba(22,36,54,0.03);
+    border-top: 1px solid rgba(22,36,54,0.08);
+    border-bottom: 1px solid rgba(22,36,54,0.08);
     padding: 8rem 2rem;
 }
 
