@@ -946,9 +946,7 @@ p, .body-text {
 
 /* ========== 11. STATS STRIP (ImpactStats) ========== */
 .impact-section {
-    background: rgba(22,36,54,0.03);
-    border-top: 1px solid rgba(22,36,54,0.08);
-    border-bottom: 1px solid rgba(22,36,54,0.08);
+    background: white;
     padding: 8rem 2rem;
 }
 

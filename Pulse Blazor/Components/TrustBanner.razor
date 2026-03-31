@@ -4,34 +4,16 @@
         <div class="trust-track">
             @foreach (var item in _items)
             {
-                @if (item == "140+")
-                {
-                    <div class="trust-item">
-                        <span class="trust-more">og 140 andre &rarr;</span>
-                    </div>
-                }
-                else
-                {
-                    <div class="trust-item">
-                        <img src="images/logos/@(item.ToLower().Replace(" ", "-")).png" alt="@item" class="trust-logo" />
-                    </div>
-                }
+                <div class="trust-item">
+                    <img src="images/logos/@(item.ToLower().Replace(" ", "-")).png" alt="@item" class="trust-logo" />
+                </div>
             }
             @* Duplicate for seamless loop *@
             @foreach (var item in _items)
             {
-                @if (item == "140+")
-                {
-                    <div class="trust-item">
-                        <span class="trust-more">og 140 andre &rarr;</span>
-                    </div>
-                }
-                else
-                {
-                    <div class="trust-item">
-                        <img src="images/logos/@(item.ToLower().Replace(" ", "-")).png" alt="@item" class="trust-logo" />
-                    </div>
-                }
+                <div class="trust-item">
+                    <img src="images/logos/@(item.ToLower().Replace(" ", "-")).png" alt="@item" class="trust-logo" />
+                </div>
             }
         </div>
     </div>
@@ -46,6 +28,5 @@
         "Jysk",
         "Velo",
         "State Energy Drink",
-        "140+",
     };
 }
