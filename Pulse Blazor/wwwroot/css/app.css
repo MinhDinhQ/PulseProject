@@ -3174,3 +3174,305 @@ p, .body-text {
     .oo2-stats-grid { grid-template-columns: 1fr; gap: 2rem; }
     .oo2-stats-num { font-size: 2rem; }
 }
+
+/* ========== MODERN OM OS REDESIGN ========== */
+
+/* Modern Hero */
+.oo-hero-modern {
+    background: linear-gradient(135deg, #ffffff 0%, #fafafa 100%);
+    padding: 12rem 2rem 10rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.oo-hero-modern::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -10%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(22,36,54,0.08) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.oo-hero-modern-content {
+    max-width: 850px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.oo-hero-modern-badge {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: #162436;
+    margin-bottom: 2rem;
+    display: inline-block;
+    padding: 0.5rem 1.2rem;
+    background: rgba(22,36,54,0.08);
+    border-radius: 20px;
+}
+
+.oo-hero-modern-title {
+    font-size: clamp(2.8rem, 7vw, 5rem);
+    font-weight: 900;
+    line-height: 1.05;
+    letter-spacing: -0.04em;
+    color: #0a0a0a;
+    margin-bottom: 1.5rem;
+}
+
+.accent-text {
+    background: linear-gradient(135deg, #162436 0%, #0f1820 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.oo-hero-modern-sub {
+    font-size: 1.15rem;
+    color: #525252;
+    line-height: 1.8;
+    max-width: 650px;
+    margin: 0 auto 3rem;
+    font-weight: 400;
+}
+
+.oo-hero-modern-accent {
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(90deg, #162436 0%, #67e8f9 100%);
+    margin: 0 auto;
+    border-radius: 2px;
+}
+
+/* Modern Stats */
+.oo-stats-modern {
+    background: #ffffff;
+    padding: 8rem 2rem;
+    border-top: 1px solid rgba(0,0,0,0.05);
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.oo-stats-modern-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.oo-stat-modern {
+    text-align: center;
+    padding: 2rem;
+    background: #fafafa;
+    border-radius: 16px;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+.oo-stat-modern:hover {
+    background: #ffffff;
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+    border-color: rgba(22,36,54,0.15);
+}
+
+.oo-stat-modern-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.oo-stat-modern-val {
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    font-weight: 900;
+    color: #162436;
+    letter-spacing: -0.03em;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+}
+
+.oo-stat-modern-lbl {
+    font-size: 0.95rem;
+    color: #6b7c93;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+}
+
+/* Modern Values */
+.oo-values-modern {
+    background: #ffffff;
+    padding: 10rem 2rem;
+}
+
+.oo-values-modern-header {
+    text-align: center;
+    margin-bottom: 5rem;
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.oo-values-modern-title {
+    font-size: clamp(2.2rem, 5vw, 3.5rem);
+    font-weight: 900;
+    color: #0a0a0a;
+    margin-bottom: 1rem;
+    letter-spacing: -0.03em;
+}
+
+.oo-values-modern-subtitle {
+    font-size: 1.1rem;
+    color: #6b7c93;
+    line-height: 1.6;
+}
+
+.oo-values-modern-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.oo-value-modern-card {
+    background: linear-gradient(135deg, #fafafa 0%, #ffffff 100%);
+    border: 1px solid rgba(22,36,54,0.08);
+    border-radius: 16px;
+    padding: 2.5rem;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.oo-value-modern-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #162436, #67e8f9);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+
+.oo-value-modern-card:hover {
+    box-shadow: 0 12px 32px rgba(22,36,54,0.12);
+    transform: translateY(-4px);
+    border-color: rgba(22,36,54,0.2);
+}
+
+.oo-value-modern-card:hover::before {
+    transform: scaleX(1);
+}
+
+.oo-value-modern-icon {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    display: block;
+}
+
+.oo-value-modern-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #0a0a0a;
+    margin-bottom: 0.75rem;
+    letter-spacing: -0.02em;
+}
+
+.oo-value-modern-text {
+    font-size: 0.95rem;
+    color: #6b7c93;
+    line-height: 1.7;
+    letter-spacing: -0.01em;
+}
+
+/* Modern CTA */
+.oo-cta {
+    background: linear-gradient(135deg, #162436 0%, #0f1820 100%);
+    padding: 8rem 2rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.oo-cta::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -10%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(103,232,249,0.1) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.oo-cta-inner {
+    max-width: 700px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.oo-cta-title {
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    font-weight: 900;
+    color: #ffffff;
+    letter-spacing: -0.03em;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+.oo-cta-sub {
+    font-size: 1.05rem;
+    color: rgba(255, 255, 255, 0.75);
+    line-height: 1.8;
+    margin-bottom: 2.5rem;
+    letter-spacing: -0.01em;
+}
+
+/* Responsive Modern */
+@media (max-width: 1024px) {
+    .oo-stats-modern-grid { grid-template-columns: repeat(2, 1fr); gap: 2rem; }
+    .oo-values-modern-grid { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+    .oo-hero-modern { padding: 8rem 2rem 6rem; }
+}
+
+@media (max-width: 768px) {
+    .oo-hero-modern { padding: 6rem 1.5rem 4rem; }
+    .oo-hero-modern-title { font-size: 2.2rem; }
+    .oo-stats-modern { padding: 5rem 1.5rem; }
+    .oo-stats-modern-grid { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+    .oo-stat-modern { padding: 1.5rem; }
+    .oo-values-modern { padding: 6rem 1.5rem; }
+    .oo-values-modern-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+    .oo-values-modern-title { font-size: 2rem; }
+    .oo-cta { padding: 5rem 1.5rem; }
+    .oo-cta-title { font-size: 1.8rem; }
+}
+
+@media (max-width: 480px) {
+    .oo-hero-modern { padding: 4rem 1rem 3rem; }
+    .oo-hero-modern-title { font-size: 1.8rem; }
+    .oo-hero-modern-sub { font-size: 0.95rem; }
+    .oo-stats-modern { padding: 3rem 1rem; }
+    .oo-stats-modern-grid { grid-template-columns: 1fr; gap: 1rem; }
+    .oo-stat-modern { padding: 1rem; }
+    .oo-stat-modern-icon { font-size: 2rem; }
+    .oo-stat-modern-val { font-size: 2rem; }
+    .oo-values-modern { padding: 4rem 1rem; }
+    .oo-values-modern-title { font-size: 1.6rem; }
+    .oo-value-modern-card { padding: 1.5rem; }
+    .oo-value-modern-icon { font-size: 2rem; }
+    .oo-cta { padding: 3rem 1rem; }
+    .oo-cta-title { font-size: 1.4rem; }
+}
